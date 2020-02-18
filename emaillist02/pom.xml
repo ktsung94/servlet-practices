@@ -8,7 +8,7 @@
   <artifactId>emaillist02</artifactId>
   <packaging>war</packaging>
   
-    <servlet-mapping>
+   <servlet-mapping>
     <servlet-name>EmaillistServlet</servlet-name>
     <url-pattern>/el</url-pattern>
   </servlet-mapping>  
