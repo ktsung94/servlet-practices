@@ -8,10 +8,6 @@
   <artifactId>emaillist02</artifactId>
   <packaging>war</packaging>
   
-   <servlet-mapping>
-    <servlet-name>EmaillistServlet</servlet-name>
-    <url-pattern>/el</url-pattern>
-  </servlet-mapping>  
   
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
