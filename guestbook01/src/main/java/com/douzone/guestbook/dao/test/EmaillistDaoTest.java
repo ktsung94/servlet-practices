@@ -22,7 +22,7 @@ public class EmaillistDaoTest {
 	
 	public static void insertTest() {
 		GuestBookVo vo = new GuestBookVo();
-		vo.setName("한해용");
+		vo.setName("김태성");
 		vo.setContents("안녕하세요");
 		vo.setPassword("1234");
 		
