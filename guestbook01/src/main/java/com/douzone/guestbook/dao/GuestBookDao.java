@@ -12,13 +12,13 @@ import java.util.List;
 import com.douzone.guestbook.vo.GuestBookVo;
 
 public class GuestBookDao {
-	
+
 	public List<GuestBookVo> findAll() {
 
 		Connection connection = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		List<GuestBookVo> list = new ArrayList<>();
 
 		try {
@@ -42,7 +42,7 @@ public class GuestBookDao {
 				vo.setContents(contents);
 				vo.setPassword(password);
 				vo.setRegDate(regDate);
-				
+
 				list.add(vo);
 			}
 
@@ -98,7 +98,7 @@ public class GuestBookDao {
 		}
 		return result;
 	}
-	
+
 	public boolean delete(GuestBookVo GuestBookVo) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -109,7 +109,7 @@ public class GuestBookDao {
 
 			String sql = "delete from guestbook where no = ?";
 			pstmt = connection.prepareStatement(sql);
-			
+
 			pstmt.setLong(1, GuestBookVo.getNo());
 			int count = pstmt.executeUpdate();
 
@@ -132,24 +132,24 @@ public class GuestBookDao {
 		}
 		return result;
 	}
-	
+
 	public String find(Long no) {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		String password = null;
-		
-		
+
+
 		try {
 			connection = getConnection();
 
 			String sql = "select password from guestbook where no = ?";
 			pstmt = connection.prepareStatement(sql);
 			pstmt.setLong(1, no);
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			if(rs.next()) {
 				password = rs.getString(1);
 			}
@@ -170,16 +170,16 @@ public class GuestBookDao {
 		}
 		return password;
 	}
-	
+
 	private Connection getConnection() throws SQLException {
 		Connection connection = null;
 
 		try {
 			// 1. JDBC Driver(MyDriver) 로딩
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 
 			// 2. 연결하기
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb";
+			String url = "jdbc:mysql://192.168.1.102:3307/webdb";
 			connection = DriverManager.getConnection(url, "webdb", "webdb");
 			System.out.println("연결성공!");
 
