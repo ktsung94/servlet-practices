@@ -33,8 +33,9 @@
 	</build>
 
 	<modules>
+			<module>guestbook01</module>
 		<module>helloweb</module>
-		<module>guestbook01</module>
+
 		<module>emaillist01</module>
 	</modules>
 </project>
