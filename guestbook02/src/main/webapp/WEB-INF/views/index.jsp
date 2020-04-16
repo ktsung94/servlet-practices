@@ -1,4 +1,4 @@
-<%@page import="com.douzone.guestbook.dao.GuestBookDao"%>
+<%@page import="com.douzone.guestbook.repository.GuestBookRepository"%>
 <%@page import="com.douzone.guestbook.vo.GuestBookVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

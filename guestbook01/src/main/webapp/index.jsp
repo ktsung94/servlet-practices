@@ -1,11 +1,11 @@
-<%@page import="com.douzone.guestbook.dao.GuestBookDao"%>
+<%@page import="com.douzone.guestbook.repository.GuestBookRepository"%>
 <%@page import="com.douzone.guestbook.vo.GuestBookVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <%
-	List<GuestBookVo> list = new GuestBookDao().findAll();
+	List<GuestBookVo> list = new GuestBookRepository().findAll();
 %>
 
 <html>
